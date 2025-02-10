@@ -12,7 +12,7 @@ def get_current_c2_tracker_ips():
     all_ips = set()
     url = "https://github.com/montysecurity/C2-Tracker/tree/main/data"
     request = requests.get(url)
-    tools = list(set(re.findall("\"[\w|\s|\d|\.]+IPs\.txt\"", request.text)))
+    tools = list(set(re.findall(r"\"[\w|\s|\d|\.]+IPs\.txt\"", request.text)))
     i = 0
     for tool in tools:
         tools[i] = str(tool).strip('"')
@@ -64,7 +64,7 @@ def update_opencti(current_opencti_c2_tracker_indicators):
     url = "https://github.com/montysecurity/C2-Tracker/tree/main/data"
     request = requests.get(url)
     # Get all file names ending in " IPs.txt"
-    tools = list(set(re.findall("\"[\w|\s|\d|\.]+IPs\.txt\"", request.text)))
+    tools = list(set(re.findall(r"\"[\w|\s|\d|\.]+IPs\.txt\"", request.text)))
     # Strip quotes
     i = 0
     for tool in tools:

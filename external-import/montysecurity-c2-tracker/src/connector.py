@@ -1,11 +1,11 @@
-import requests
-import re
-from time import sleep
-from pycti import OpenCTIApiClient
 import os
+import re
 from datetime import date
-from stix2 import TLP_WHITE
 from time import sleep
+
+import requests
+from pycti import OpenCTIApiClient
+from stix2 import TLP_WHITE
 
 def get_current_c2_tracker_ips():
     print("[+] Getting Current IOCs...")

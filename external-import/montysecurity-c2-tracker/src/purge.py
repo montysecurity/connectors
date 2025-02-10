@@ -1,5 +1,6 @@
-from pycti import OpenCTIApiClient
 import os
+
+from pycti import OpenCTIApiClient
 
 api_url = os.getenv("OPENCTI_URL")
 api_token = os.getenv("OPENCTI_C2TRACKER_TOKEN")
